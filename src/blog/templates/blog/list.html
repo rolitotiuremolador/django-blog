@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ ptitle }}{% endblock %}
+
+{% block content %}
+  <h3>Blog Post List View</h3>
+  {% for obj in objects %}
+    <li><a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a> - {{ obj.slug }}</li>
+    <p>{{ obj.content }}</p>
+  {% endfor %}
+{% endblock %}

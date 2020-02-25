@@ -1,0 +1,7 @@
+# SQLite database file
+*.sqlite3
+
+venv/
+.env
+*.py[cod]
+__pychache__/
