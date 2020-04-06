@@ -1,7 +1,7 @@
-"""blogapp URL Configuration
+"""config URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.2/topics/http/urls/
+    https://docs.djangoproject.com/en/2.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -14,16 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from blog.views import blog_post_create_view
-from .views import home, about, contact
+from django.urls import path
 
 urlpatterns = [
-    path('blog/', include("blog.urls")),
-    path('blog-new/', blog_post_create_view),
-
-    path('', home),
-    path('about/', about),
-    path('contact/', contact),
     path('admin/', admin.site.urls),
 ]
