@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ 'Forum' }} - {{ block.super }}{% endblock %}
+
+{% block breadcrumb %}
+      <li class="breadcrumb-item active">Forums</li>
+{% endblock %}
+
+{% block content %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Forum</th>
+        <th>Posts</th>
+        <th>Topics</th>
+        <th>Last Post</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for forum in forums %}
+        <tr>
+          <td>
+            <a href="{% url 'forum_topics' forum.pk %}">{{ forum.title }}</a>
+            <small class="text-muted d-block">{{ forum.description }}</small>
+          </td>
+          <td class="align-middle">0</td>
+          <td class="align-middle">0</td>
+          <td class="align-middle"></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
